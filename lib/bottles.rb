@@ -1,12 +1,16 @@
 class Bottles
 
+  def verses(from, to)
+    (to..from).to_a.reverse.collect { |i|
+      verse(i)
+    }.join("\n")
+  end
+
   def verse(count)
-    verse = []
-
-    verse << first_period(count)
-    verse << second_period(count)
-
-    verse.join("\n") + "\n"
+    [
+      first_period(count),
+      second_period(count)
+    ].join("\n") + "\n"
   end
 
   private
