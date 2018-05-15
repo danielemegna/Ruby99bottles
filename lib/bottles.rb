@@ -1,5 +1,9 @@
 class Bottles
 
+  def song
+    verses(99, 0)
+  end
+
   def verses(from, to)
     (to..from).to_a.reverse.collect { |i|
       verse(i)
